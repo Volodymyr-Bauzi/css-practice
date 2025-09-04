@@ -1,1 +1,29 @@
+body {
+  margin: 0;
+}
 
+.person {
+  &__photo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 200px;
+  }
+
+  &__rank {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 32px;
+    background-color: white;
+  }
+}
