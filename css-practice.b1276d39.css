@@ -1,0 +1,124 @@
+:root {
+  --height: 50px;
+  --minus-height: -50px;
+}
+
+body {
+  color: #2f4f4f;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.people {
+  --count: 2;
+  grid-template-columns: repeat(var(--count), 220px);
+  justify-content: center;
+  gap: 40px 10px;
+  padding-top: 30px;
+  display: grid;
+}
+
+@media (width >= 1000px) {
+  .people {
+    --count: 4;
+  }
+}
+
+.person {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+  transition: transform 1s;
+  display: flex;
+  position: relative;
+}
+
+.person:hover {
+  z-index: 1;
+  background-color: #eee;
+  transform: scale(1.2);
+}
+
+.person:hover .person__extra {
+  opacity: 1;
+  display: 1;
+}
+
+.person:hover .person__img {
+  border-radius: 60px;
+}
+
+.person__photo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.person__img {
+  border-radius: 200px;
+  width: 100%;
+  transition: border-radius 1s linear;
+}
+
+.person__rank {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.person__details {
+  text-align: center;
+  flex-direction: column;
+  gap: 9px;
+  display: flex;
+}
+
+.person__name {
+  z-index: 1;
+  width: 100%;
+}
+
+.person__extra {
+  bottom: var(--minus-height);
+  width: 100%;
+  height: var(--height);
+  line-height: var(--height);
+  color: #000;
+  opacity: 0;
+  display: 0;
+  background-color: #eee;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.person__sport:after {
+  content: ",";
+}
+
+.person__pay:before {
+  content: "$";
+}
+
+.person__pay:after {
+  content: "M";
+}
+/*# sourceMappingURL=css-practice.b1276d39.css.map */
